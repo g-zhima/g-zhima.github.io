@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JS 传递参数，是按值传递还是引用传递？ | ZHIMA | CODE IS POETRY</title>
+
+  
+  <meta name="author" content="芝麻小关">
+  
+
+  
+  <meta name="description" content="首先明确答案，JavaScript 中所有函数的参数都是按值传递的！
+怎么和想的不太一样，这篇文章来详细解释一下函数参数的传递方式！
+传递基本类型的数据比较好理解，被传递的值直接复制给命名参数。
+123456789function add(num) &amp;#123;    num += 10;    r">
+  
+
+  
+  <meta name="keywords" content="blog">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="JS 传递参数，是按值传递还是引用传递？"/>
+
+  <meta property="og:site_name" content="ZHIMA"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="ZHIMA" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">ZHIMA</a>
+    </h1>
+    <p class="site-description">CODE IS POETRY</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>JS 传递参数，是按值传递还是引用传递？</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/25/JS 传递参数，是按值传递还是引用传递？/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-25T11:26:10.000Z">
+          2020-01-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <a id="more"></a>
+
+<p><strong>首先明确答案，JavaScript 中所有函数的参数都是按值传递的！</strong></p>
+<p>怎么和想的不太一样，这篇文章来详细解释一下函数参数的传递方式！</p>
+<p>传递基本类型的数据比较好理解，被传递的值直接复制给命名参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    num += <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> result = add(count);</span><br><span class="line">alert(count);	<span class="comment">//20</span></span><br><span class="line">alert(result);	<span class="comment">//30</span></span><br></pre></td></tr></table></figure>
+
+<p>调用函数时，<code>count</code> 将值复制给函数中的参数 <code>num</code>。在函数中 <code>num</code> 被加上了 10，但是并不会影响 <code>count</code> 的值，它们存着数值相同但相互独立的值。如果 <code>num</code> 是按引用传递的话，<code>count</code> 的值将变为30，反映函数内部的变化。</p>
+<p>当传递的参数是引用类型的数据时，函数参数仍然是按值传递。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">	obj.name = <span class="string">&#x27;zhima&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = &#123;&#125;;</span><br><span class="line">setName(person);</span><br><span class="line">alert(person.name);	<span class="comment">//&#x27;zhima&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>首相我们创建了一个名为 <code>person</code> 的空对象，也就是说：<code>person</code> 的<strong>值</strong>存着空对象的<strong>引用</strong>。当调用函数时，<code>person</code> 将它存的值（也就是空对象的引用）复制给 <code>obj</code> 。所以 <code>person</code> 和 <code>obj</code> 引用是同一个变量，函数内部的修改，会反映到函数外来。</p>
+<blockquote>
+<p>这里要注意区分访问变量的方式和传递参数的方式不是一回事。<code>person</code> 是按值传递给 <code>obj</code> 的，但是 <code>person</code> 和 <code>obj</code> 都是按引用来访问同一个对象的，因为 <code>person</code> 中的值就是对象的引用。</p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 芝麻小关
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

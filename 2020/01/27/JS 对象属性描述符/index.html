@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JS 对象属性描述符 | ZHIMA | CODE IS POETRY</title>
+
+  
+  <meta name="author" content="芝麻小关">
+  
+
+  
+  <meta name="description" content="JS 对象的属性分为两种：数据属性 和 访问器属性。
+数据属性数据属性有 4 个描述行为的特性。
+
+[[Configurable]] ：表示能否配置该属性（修改该属性的其他特性、删除该属性以及将该属性的类型修改为访问器属性）。
+[[Emumerable]] ：表示能否通过 for...in 返回该属">
+  
+
+  
+  <meta name="keywords" content="blog">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="JS 对象属性描述符"/>
+
+  <meta property="og:site_name" content="ZHIMA"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="ZHIMA" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">ZHIMA</a>
+    </h1>
+    <p class="site-description">CODE IS POETRY</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>JS 对象属性描述符</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/27/JS 对象属性描述符/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-27T07:45:18.000Z">
+          2020-01-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <a id="more"></a>
+
+<p>JS 对象的属性分为两种：<em>数据属性</em> 和 <em>访问器属性</em>。</p>
+<h2 id="数据属性"><a href="#数据属性" class="headerlink" title="数据属性"></a>数据属性</h2><p>数据属性有 4 个描述行为的特性。</p>
+<ul>
+<li><code>[[Configurable]]</code> ：表示能否配置该属性（修改该属性的其他特性、删除该属性以及将该属性的类型修改为访问器属性）。</li>
+<li><code>[[Emumerable]]</code> ：表示能否通过 <code>for...in</code> 返回该属性。</li>
+<li><code>[[Writable]]</code> ：表示能否修改属性的值。</li>
+<li><code>Value</code> ：表示这个属性的值。读取属性值时，从这个位置读，写入属性值时从这个位置把新值保存在这个位置。</li>
+</ul>
+<p><strong>当我们不显式的修改这些特性定义对象的属性时，除 <code>[[Value]]</code> 外，其它特性都为 <code>true</code>。</strong></p>
+<p>要修改属性的默认特性，需要使用 <code>Object.defineProperty()</code> 方法。</p>
+<p>语法是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(obj, propertyName, descriptor)</span><br></pre></td></tr></table></figure>
+
+<p><code>obj</code>，<code>propertyName</code>：要处理的对象和属性。</p>
+<p><code>descriptor</code>：描述符对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&#x27;name&#x27;</span>, &#123;</span><br><span class="line">	value: <span class="string">&#x27;zhima&#x27;</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>以上我们在对象 <code>user</code> 中创建一个 <code>name</code> 属性，需要注意第二个参数 <code>&#39;name&#39;</code> 是字符串（对象的属性名其实是字符串）。<strong>在显式的使用该方法创建新属性时，如果不指定 <code>[[Configurable]]</code> <code>[[Emumerable]]</code> <code>[[Writable]]</code> 都将是 <code>false</code>。</strong></p>
+<p>现在让我们通过示例来看看标志的效果。</p>
+<h3 id="只读"><a href="#只读" class="headerlink" title="只读"></a>只读</h3><p>我们通过修改 <code>writable</code> 标志来把 <code>user.name</code> 设置为只读：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  name: <span class="string">&quot;zhima&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&quot;name&quot;</span>, &#123;</span><br><span class="line">  writable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">user.name = <span class="string">&quot;Pete&quot;</span>;	<span class="comment">// 错误，user 的name 值不会改变。</span></span><br></pre></td></tr></table></figure>
+
+<p>现在没有人可以改变我们的用户名称，除非他重新调用 <code>defineProperty</code> 来覆盖我们的用户。</p>
+<h3 id="不可枚举"><a href="#不可枚举" class="headerlink" title="不可枚举"></a>不可枚举</h3><p>我们可以设置 <code>enumerable:false</code>。然后它不会出现在 <code>for..in</code> 循环中:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  name: <span class="string">&quot;zhima&quot;</span>,</span><br><span class="line">  sayHi() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;hi&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&quot;sayHi&quot;</span>, &#123;</span><br><span class="line">  enumerable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> user) alert(key); <span class="comment">// name</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="不可配置"><a href="#不可配置" class="headerlink" title="不可配置"></a>不可配置</h3><p>我们可以设置 <code>Configurable: false</code>，一个不可配置的属性不能被 <code>defineProperty</code> 删除或修改。</p>
+<p><strong>注意：当 <code>Configurable: false</code> 时，<code>[[Writable]]</code> 特性可以单向从 <code>true</code> 修改为 <code>false</code> ，而 <code>[[Value]]</code> 特性只与  <code>[[Writable]]</code> 特性关联不受 <code>[[Configurable]]</code> 影响。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">    name: <span class="string">&#x27;zhima&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&quot;name&quot;</span>, &#123;</span><br><span class="line">  configurable: <span class="literal">false</span>	<span class="comment">// 因为 [[Writable]] 为 true，所以可以通过修改 [[Value]] 来修改属性的值</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">    name: <span class="string">&#x27;zhima&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&quot;name&quot;</span>, &#123;</span><br><span class="line">  writable: <span class="literal">false</span>,	</span><br><span class="line">  configurable: <span class="literal">false</span>	<span class="comment">// 在这里，我们将 user.name 设置为“永久封闭”的常量：</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h2><p>访问器属有 4 个描述行为的特性。</p>
+<ul>
+<li><code>[[Configurable]]</code>：同数据属性相似。</li>
+<li><code>[[Emumerable]]</code>：同数据属性相似。</li>
+<li><code>[[Get]]</code>：在读取属性时调用的函数。</li>
+<li><code>[[Set]]</code>：在写入属性时调用的函数。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  firstName: <span class="string">&quot;zhima&quot;</span>,</span><br><span class="line">  lastName: <span class="string">&quot;xiaoguan&quot;</span>,</span><br><span class="line"></span><br><span class="line">  <span class="keyword">get</span> <span class="title">fullName</span>() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.firstName&#125;</span> <span class="subst">$&#123;<span class="built_in">this</span>.lastName&#125;</span>`</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="keyword">set</span> <span class="title">fullName</span>(<span class="params">value</span>) &#123;</span><br><span class="line">  	[<span class="built_in">this</span>.firstName, <span class="built_in">this</span>.lastName] = value.split(<span class="string">&quot; &quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">alert(user.fullName); <span class="comment">// zhima xiaoguan</span></span><br><span class="line">user.fullName = <span class="string">&#x27;zhima daguan&#x27;</span>;</span><br><span class="line">user.firstName = <span class="string">&#x27;zhima&#x27;</span>;</span><br><span class="line">user.lastName = <span class="string">&#x27;daguan&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Vue 中的计算属性就是访问器属性。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 芝麻小关
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

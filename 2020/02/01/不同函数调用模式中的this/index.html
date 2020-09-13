@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>不同函数调用模式中的 this | ZHIMA | CODE IS POETRY</title>
+
+  
+  <meta name="author" content="芝麻小关">
+  
+
+  
+  <meta name="description" content="在 JS 中函数有 4 种调用模式：方法调用模式、函数调用模式、构造器调用模式、apply 调用模式。这些模式在初始化 this 上存在差异。
+方法调用模式中的 this 绑定到调用它的对象上。
+构造器调用模式中的 this 绑定在通过该构造函数新创建的新对象上。
+apply 调用模式中的 this">
+  
+
+  
+  <meta name="keywords" content="blog">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="不同函数调用模式中的 this"/>
+
+  <meta property="og:site_name" content="ZHIMA"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="ZHIMA" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">ZHIMA</a>
+    </h1>
+    <p class="site-description">CODE IS POETRY</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>不同函数调用模式中的 this</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/02/01/不同函数调用模式中的this/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-02-01T01:34:52.000Z">
+          2020-02-01
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>在 JS 中函数有 4 种调用模式：方法调用模式、函数调用模式、构造器调用模式、apply 调用模式。这些模式在初始化 this 上存在差异。</p>
+<p>方法调用模式中的 this 绑定到调用它的对象上。</p>
+<p>构造器调用模式中的 this 绑定在通过该构造函数新创建的新对象上。</p>
+<p>apply 调用模式中的 this 绑定在传给 apple/call 方法第一个参数指向的对象上。</p>
+<p>函数调用模式有些特殊，当以此方式调用函数时，this 被绑定到了全局对象上。这是语言设计的错误，导致<strong>方法不能利用内部的函数来帮助它工作，因为内部函数的 this 被绑定在了全局上，所以不能共享该方法对对象的访问权</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">	f1: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">this</span>);	</span><br><span class="line">		<span class="keyword">let</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">		&#125;;</span><br><span class="line">		f2();	<span class="comment">//函数调用模式，this 值绑定到了 window。</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">o.f1()	<span class="comment">//对象的方法调用，this 的值是对象 o。</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码包含两层this，结果运行后，第一层指向该对象，第二层指向全局对象。一个解决方法是在第二层改用一个指向外层this的变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">	f1: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">         <span class="keyword">var</span> that = <span class="built_in">this</span>;</span><br><span class="line">		<span class="keyword">let</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(that);</span><br><span class="line">		&#125;;</span><br><span class="line">		f2();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">o.f1()</span><br></pre></td></tr></table></figure>
+
+<p>上面代码定义了变量that，固定指向外层的this，然后在内层使用that，就不会发生this指向的改变。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 芝麻小关
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

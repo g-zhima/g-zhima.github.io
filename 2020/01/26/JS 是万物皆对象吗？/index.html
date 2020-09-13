@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JS 是万物皆对象吗？ | ZHIMA | CODE IS POETRY</title>
+
+  
+  <meta name="author" content="芝麻小关">
+  
+
+  
+  <meta name="description" content="常常听到别人说 JS 中万物皆对象，但是事实确实是这样的吗？在高程中我找到了答案。
+首先 JS 中有两大类数据类型，基本数据类型和引用数据类型，引用数据类型是对象这个不用解释，那基本数据类型的本质也是继承自 Object 嘛？答案是否定的。
+首先，基本数据类型是无法添加属性和方法的，而引用类型却可以">
+  
+
+  
+  <meta name="keywords" content="blog">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="JS 是万物皆对象吗？"/>
+
+  <meta property="og:site_name" content="ZHIMA"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="ZHIMA" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">ZHIMA</a>
+    </h1>
+    <p class="site-description">CODE IS POETRY</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/about">关于</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>JS 是万物皆对象吗？</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/26/JS 是万物皆对象吗？/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-26T08:30:30.000Z">
+          2020-01-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <a id="more"></a>
+
+<p>常常听到别人说 JS 中万物皆对象，但是事实确实是这样的吗？在高程中我找到了答案。</p>
+<p>首先 JS 中有两大类数据类型，<em>基本数据类型</em>和<em>引用数据类型</em>，引用数据类型是对象这个不用解释，那基本数据类型的本质也是继承自 <code>Object</code> 嘛？答案是否定的。</p>
+<p>首先，基本数据类型是无法添加属性和方法的，而引用类型却可以。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">10</span>;</span><br><span class="line">num.name = <span class="string">&#x27;zhima&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num.name);	<span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">obj.name = <span class="string">&#x27;zhima&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name);	<span class="comment">// &#x27;zhima&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>在内存中，基本类型和引用类型的储存方式也是不同的。基本类型的数据直接放在栈内存中，而引用数据类型在栈内存只保存它的引用（指针），真正的值存在堆内存中。这也是这两种数据类型访问方式不同的原因。</p>
+<p>所以 JS 万物皆对象的说法是不正确的，但是又为什么常有人造成这样的误解呢？</p>
+<p>因为 JS 中基本数据类型（<code>String</code> <code>Boolean</code> <code>Number</code>）也有属于它们的属性和方法，而属性和方法是对象才有的。</p>
+<p>最简单的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s1 = <span class="string">&#x27;zhima&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> s2 = s1.substring(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>这个例子中，我使用了字符串 <code>s1</code> 的方法，这和基本类型不是对象的说法矛盾了，这就要提到 JS 中的基本包装类型了。</p>
+<p>每当我们去调用基本数据类型的属性方法时，JS 都会在后台创建一个对应基本包装类型的对象，从而让我们可以调用一些方法来操作数据。</p>
+<p>还是之前的例子，当我们调用 <code>s1</code> 的方法时，JS 在后台完成了一系列的动作：</p>
+<ol>
+<li>创建 <code>String</code> 类型的一个实例；</li>
+<li>在实例上调用指定的方法；</li>
+<li>销毁这个实例。</li>
+</ol>
+<p>可以想象为以下三行代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s1 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&#x27;zhima&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> s2 = s1.substring(<span class="number">2</span>);</span><br><span class="line">s1 = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+
+<p>所以引用类型和基本包装类型的区别就在于对象的生命周期，基本包装类型的生命周期很短，只在代码执行的孙坚存在，然后就被销毁了，所以这也是为什么我们不能为基本类型添加属性和方法。</p>
+<p>所以这也是以下例子的原因：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">&quot;zhima&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&quot;xiaoguan&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str1.__proto__ === str2.__proto__);	<span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(str1 <span class="keyword">instanceof</span> <span class="built_in">String</span>);	<span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(str2 <span class="keyword">instanceof</span> <span class="built_in">String</span>);	<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>现在可以说明 JS 并不是万物皆对象了！</strong></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2020 芝麻小关
+    
+  </p>
+</footer>
+    
+    
+  </div>
+</div>
+</body>
+</html>

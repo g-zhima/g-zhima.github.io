@@ -63,15 +63,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/09/12/zhima/"><span>zhima</span></a></h3>
+    <h3 class="article-title"><a href="/2020/09/13/CSS中的BFC及其应用/"><span>CSS 中的 BFC 及其应用</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/09/12/zhima/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-09-12T11:26:10.000Z">
-          2020-09-12
+      <a href="/2020/09/13/CSS中的BFC及其应用/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-09-13T08:01:11.000Z">
+          2020-09-13
         </time>
       </a>
     </span>
@@ -83,7 +83,158 @@
   <div class="article-content">
     <div class="entry">
       
-        <h3 id="知啊空大师-阿萨阿萨阿萨aaaa"><a href="#知啊空大师-阿萨阿萨阿萨aaaa" class="headerlink" title="知啊空大师 阿萨阿萨阿萨aaaa"></a>知啊空大师 阿萨阿萨阿萨aaaa</h3><p>lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem<br>loremlorem loremloremlor emloremlorem loremlorem lorem lorem</p>
+        <h3 id="未完成，待补充"><a href="#未完成，待补充" class="headerlink" title="未完成，待补充"></a>未完成，待补充</h3>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/CSS/">CSS</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/09/13/CSS层叠上下文/"><span>CSS 层叠上下文</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/09/13/CSS层叠上下文/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-09-13T07:59:10.000Z">
+          2020-09-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="未完成，待补充"><a href="#未完成，待补充" class="headerlink" title="未完成，待补充"></a>未完成，待补充</h3>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/CSS/">CSS</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/09/01/HTML5标签嵌套的问题/"><span>HTML5 标签嵌套的问题</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/09/01/HTML5标签嵌套的问题/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-09-01T07:56:48.000Z">
+          2020-09-01
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>一直认为 HTML 标签嵌套的问题很简单,直到有同学问我 <code>&lt;p&gt;</code> 标签和 <code>&lt;div&gt;</code> 标签嵌套的问题后，我才发现原来标签嵌套也有这么多的细节，这篇博客就总结一下查到的东西。</p>
+<div align="middle"><image  src="http://wx4.sinaimg.cn/large/ceeb653ely1gcesg5qzejg20k00k0npd.gif" width="200px"  />
+</div>
+
+<p>首先是之前一直学的嵌套规则：</p>
+<ul>
+<li>块级元素可以嵌套块级元素和行内元素。</li>
+<li>行内元素可以嵌套行内元素但不能嵌套块级元素。</li>
+</ul>
+<p>乍一看没什么问题，但实际网页中似乎有违背这些规则的情况出现。</p>
+<p>首先是同为块级元素的 <code>&lt;p&gt;</code> 标签和 <code>&lt;div&gt;</code> 标签嵌套问题，在 <code>&lt;p&gt;</code> 中嵌套 <code>&lt;div&gt;</code> 没有违背嵌套规则，但在浏览器解析时会出现严重的问题：会直接将 <code>&lt;div&gt;</code> 标签包裹在两个 <code>&lt;p&gt;</code> 标签之间。这没有合适的解释，大家都按特殊规则进行记忆。</p>
+<p>另一个情况就是会经常看到 <code>&lt;a&gt;</code> 标签中嵌套 <code>&lt;div&gt;</code> 等块级标签，这显然也违背了行内元素不能嵌套块级标签的规则，但事实上很多网站都用了这样的规则。</p>
+<div align="middle"><image  src="http://ww1.sinaimg.cn/bmiddle/9150e4e5gy1gcm9bvhjcjj205i05igli.jpg" width="200px"  />
+</div>
+
+<p>于是，有事上 google，我发现之前学过的嵌套规则其实属于淘汰后的规则，新的 HTML5 嵌套规则有了很大的区别。</p>
+<p>之前的规则把元素分成了块级和行内级，这其实是基于 CSS 样式的分类方式，而 HTML5 新的规范其实一直想强调语义并弱化样式，这样有助于结构和样式的分离，这在 HTML5 中删除了许多定义样式的标签和属性，新增了无样式的语义标签也可以看出。</p>
+<p>那新的嵌套规则是什么呢？且听我慢慢道来~~</p>
+<div align="middle"><image  src="http://ww1.sinaimg.cn/bmiddle/9150e4e5gy1gch4lajq3vj205i041dfq.jpg" width="200px"  />
+</div>
+
+<p>在新的规范中，标签最常见的有 7 类，并且每种标签可以有多个类型。</p>
+<ul>
+<li>元数据内容（Metadata content）</li>
+<li>流式元素（Flow content）</li>
+<li>章节元素（Sectioning content）</li>
+<li>标题元素（Heading content）</li>
+<li>短语/段落元素（Phrasing content）</li>
+<li>嵌入元素（Embedded content）</li>
+<li>交互元素（Interactive content）</li>
+</ul>
+<p>具体每个分类中有哪些标签，我就懒得写了，丢个 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Content_categories">MDN</a> 链接自行查找。</p>
+<div align="middle"><image  src="http://ww2.sinaimg.cn/bmiddle/6af89bc8gw1f8q3pgl57oj20b407fmx7.jpg" width="200px"  />
+</div>
+
+<p>可以看出新规范的分类方法更加重视了语义，这与 HTML 本身要表达的意思也更符合。每种分类都有相对应的嵌套规则，下面来看几个代表性强的例子：</p>
+<blockquote>
+<p>首先是 <code>&lt;p&gt;</code> 标签，查看 MDN 可知它属于 Flow content，palpable content。它接受的内容为 Phrasing content。而 Phrasing content 中并没有 <code>&lt;div&gt;</code> 标签，所以按规则 <code>&lt;p&gt;</code> 标签是不能嵌套 <code>&lt;div&gt;</code> 标签的。</p>
+</blockquote>
+<blockquote>
+<p>然后看看 <code>&lt;div&gt;</code> 标签，它允许的子元素是 Flow content，而流式元素基本涵括了页面中的大部分元素，所以我们在用<div>时可以不用担心嵌套错误的问题。</p>
+</blockquote>
+<blockquote>
+<p>那 <code>&lt;a&gt;</code> 标签呢？它稍微特殊一点，它允许的子元素中有个 Transparent，所以它接受的子元素是以它父元素接受的元素为准的，但不能包含交互式元素。所以在新规范下就很明确了，<code>&lt;a&gt;</code> 标签是可以嵌套 <code>&lt;div&gt;</code> 标签的，只要 <code>&lt;a&gt;</code> 标签的父元素可以嵌套 <code>&lt;div&gt;</code> 就行。</p>
+</blockquote>
+<p>最后，我们可以把嵌套规则分成：严格嵌套约束、语义嵌套约束。严格的嵌套约束是必须遵守的，不然会导致浏览器的解析错误，比如 <code>&lt;p&gt;</code> 标签中嵌套 <code>&lt;div&gt;</code> 标签，<code>&lt;a&gt;</code> 标签中嵌套 <code>&lt;a&gt;</code>标签。语义嵌套相对没那么严格，浏览器也会正确解析，但在实际开发还是要尽量遵守，保证语义正确。</p>
+<div align="middle"><image  src="http://ww3.sinaimg.cn/bmiddle/9150e4e5gy1gbz6hdf5kfj20ed0ag750.jpg" width="200px"  />
+</div>
 
       
     </div>
@@ -100,7 +251,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/123/">123</a>
+        <a href="/tags/HTML/">HTML</a>
     </span>
     
 
@@ -116,15 +267,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/09/12/hello-world/"><span>Hello World</span></a></h3>
+    <h3 class="article-title"><a href="/2020/08/09/FLEX布局详解/"><span>FLEX 布局详解</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/09/12/hello-world/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-09-12T11:11:27.531Z">
-          2020-09-12
+      <a href="/2020/08/09/FLEX布局详解/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-08-09T07:54:35.000Z">
+          2020-08-09
         </time>
       </a>
     </span>
@@ -136,19 +287,106 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h2 id="Flex-布局是什么？"><a href="#Flex-布局是什么？" class="headerlink" title="Flex 布局是什么？"></a>Flex 布局是什么？</h2><p>Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。任何一个容器都可以指定为 Flex 布局，行内元素也可以使用 Flex 布局。</p>
+<blockquote>
+<p>注意，设为 Flex 布局以后，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失效。</p>
+</blockquote>
+<hr>
+<h2 id="Flex-基本概念"><a href="#Flex-基本概念" class="headerlink" title="Flex 基本概念"></a>Flex 基本概念</h2><p>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。</p>
+<p><img src="https://user-images.githubusercontent.com/36685782/89724021-666e2000-da30-11ea-8adc-634326c356a6.png" alt="基本概念"></p>
+<p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。</p>
+<p>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+<hr>
+<h2 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h2><ul>
+<li><code>flex-direction</code></li>
+<li><code>flex-wrap</code></li>
+<li><code>flex-flow</code></li>
+<li><code>justify-content</code></li>
+<li><code>align-items</code></li>
+<li><code>align-content</code></li>
+</ul>
+<hr>
+<h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a><code>flex-direction</code></h3><p><code>flex-direction</code> 决定主轴的方向</p>
+<ul>
+<li><code>row</code>（默认值）：主轴为水平方向，起点在左端。</li>
+<li><code>row-reverse</code>：主轴为水平方向，起点在右端。</li>
+<li><code>column</code>：主轴为垂直方向，起点在上沿。</li>
+<li><code>column-reverse</code>：主轴为垂直方向，起点在下沿。</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/36685782/89724194-6bcc6a00-da32-11ea-96c0-6a2b239166bd.png" alt="direction"></p>
+<hr>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a><code>flex-wrap</code></h3><p><code>flex-wrap</code> 属性定义，如果一条轴线排不下，如何换行。</p>
+<ul>
+<li><code>nowrap</code>（默认）：不换行。</li>
+<li><code>wrap</code>：换行，第一行在上方。</li>
+<li><code>wrap-reverse</code>：换行，第一行在下方。</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/36685782/89724324-09746900-da34-11ea-8341-1aaa1de6185a.png" alt="wrap"></p>
+<hr>
+<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a><code>flex-flow</code></h3><p><code>flex-flow</code> 属性是 <code>flex-direction</code> 属性和 <code>flex-wrap</code> 属性的简写形式，默认值为 <code>row nowrap</code>。</p>
+<hr>
+<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a><code>justify-content</code></h3><p><code>justify-content</code> 属性定义了项目在主轴上的对齐方式。</p>
+<ul>
+<li><code>flex-start</code>（默认值）：左对齐（假设主轴为从左到右，下同）</li>
+<li><code>flex-end</code>：右对齐</li>
+<li><code>center</code>： 居中</li>
+<li><code>space-between</code>：两端对齐，项目之间的间隔都相等。</li>
+<li><code>space-around</code>：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/36685782/89724430-76d4c980-da35-11ea-89d0-b10bf8fa2045.png" alt="justify-content"></p>
+<hr>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a><code>align-items</code></h3><p><code>align-items</code> 属性定义项目在交叉轴上如何对齐。</p>
+<ul>
+<li><code>flex-start</code>：交叉轴的起点对齐。（假设交叉轴从上到下，下同）</li>
+<li><code>flex-end</code>：交叉轴的终点对齐。</li>
+<li><code>center</code>：交叉轴的中点对齐。</li>
+<li><code>baseline</code>: 项目的第一行文字的基线对齐。</li>
+<li><code>stretch</code>（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/36685782/89724574-7f2e0400-da37-11ea-9f5f-45eab38d8137.png" alt="aligin-item"></p>
+<hr>
+<h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a><code>align-content</code></h3><p><code>align-content</code> 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
+<ul>
+<li><code>flex-start</code>：与交叉轴的起点对齐。</li>
+<li><code>flex-end</code>：与交叉轴的终点对齐。</li>
+<li><code>center</code>：与交叉轴的中点对齐。</li>
+<li><code>space-between</code>：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+<li><code>space-around</code>：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+<li><code>stretch</code>（默认值）：轴线占满整个交叉轴。</li>
+</ul>
+<hr>
+<h2 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h2><ul>
+<li><code>order</code></li>
+<li><code>flex-grow</code></li>
+<li><code>flex-shrink</code></li>
+<li><code>flex-basis</code></li>
+<li><code>flex</code></li>
+<li><code>align-self</code></li>
+</ul>
+<hr>
+<h3 id="order"><a href="#order" class="headerlink" title="order"></a><code>order</code></h3><p><code>order</code> 属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
+<hr>
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a><code>flex-grow</code></h3><p><code>flex-grow</code> 属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</p>
+<blockquote>
+<p>用来“瓜分”父项的“剩余空间”。如果所有项目 <code>flex-grow</code> 都为 1，将等比例沾满容器。</p>
+</blockquote>
+<hr>
+<h3 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a><code>flex-shrink</code></h3><p><code>flex-shrink</code> 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
+<blockquote>
+<p>用来“吸收”子项“超出的空间”。如果所有项目的 <code>flex-shrink</code> 属性都为 1，当空间不足时，都将等比例缩小。如果一个项目的 <code>flex-shrink</code> 属性为 0，其他项目都为 1，则空间不足时，前者不缩小。</p>
+</blockquote>
+<hr>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a><code>flex-basis</code></h3><p><code>flex-basis</code> 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p>
+<blockquote>
+<p><code>flex-basis</code> 如果设置了值，则子项占用的空间为设置的值；如果没设置或者为 auto，那子项的空间为 <code>width</code>/<code>height</code> 的值。</p>
+</blockquote>
+<hr>
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a><code>flex</code></h3><p><code>flex</code> 属性是 <code>flex-grow</code>, <code>flex-shrink</code> 和 <code>flex-basis</code> 的简写，默认值为 <code>0 1 auto</code>。后两个属性可选。</p>
+<blockquote>
+<p>有两个快捷值：<code>auto</code>（<code>1 1 auto</code>） 和 <code>none</code>（<code>0 0 auto</code>）</p>
+</blockquote>
+<hr>
+<h3 id="aligin-item"><a href="#aligin-item" class="headerlink" title="aligin-item"></a><code>aligin-item</code></h3><p><code>aligin-item</code> 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p>
 
       
     </div>
@@ -160,6 +398,320 @@
 
     
 
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/CSS/">CSS</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/02/01/不同函数调用模式中的this/"><span>不同函数调用模式中的 this</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/02/01/不同函数调用模式中的this/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-02-01T01:34:52.000Z">
+          2020-02-01
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>在 JS 中函数有 4 种调用模式：方法调用模式、函数调用模式、构造器调用模式、apply 调用模式。这些模式在初始化 this 上存在差异。</p>
+<p>方法调用模式中的 this 绑定到调用它的对象上。</p>
+<p>构造器调用模式中的 this 绑定在通过该构造函数新创建的新对象上。</p>
+<p>apply 调用模式中的 this 绑定在传给 apple/call 方法第一个参数指向的对象上。</p>
+<p>函数调用模式有些特殊，当以此方式调用函数时，this 被绑定到了全局对象上。这是语言设计的错误，导致<strong>方法不能利用内部的函数来帮助它工作，因为内部函数的 this 被绑定在了全局上，所以不能共享该方法对对象的访问权</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">	f1: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">this</span>);	</span><br><span class="line">		<span class="keyword">let</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">		&#125;;</span><br><span class="line">		f2();	<span class="comment">//函数调用模式，this 值绑定到了 window。</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">o.f1()	<span class="comment">//对象的方法调用，this 的值是对象 o。</span></span><br></pre></td></tr></table></figure>
+
+<p>上面代码包含两层this，结果运行后，第一层指向该对象，第二层指向全局对象。一个解决方法是在第二层改用一个指向外层this的变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> o = &#123;</span><br><span class="line">	f1: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="built_in">this</span>);</span><br><span class="line">         <span class="keyword">var</span> that = <span class="built_in">this</span>;</span><br><span class="line">		<span class="keyword">let</span> f2 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(that);</span><br><span class="line">		&#125;;</span><br><span class="line">		f2();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">o.f1()</span><br></pre></td></tr></table></figure>
+
+<p>上面代码定义了变量that，固定指向外层的this，然后在内层使用that，就不会发生this指向的改变。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/01/27/JS 对象属性描述符/"><span>JS 对象属性描述符</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/27/JS 对象属性描述符/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-27T07:45:18.000Z">
+          2020-01-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <a id="more"></a>
+
+<p>JS 对象的属性分为两种：<em>数据属性</em> 和 <em>访问器属性</em>。</p>
+<h2 id="数据属性"><a href="#数据属性" class="headerlink" title="数据属性"></a>数据属性</h2><p>数据属性有 4 个描述行为的特性。</p>
+<ul>
+<li><code>[[Configurable]]</code> ：表示能否配置该属性（修改该属性的其他特性、删除该属性以及将该属性的类型修改为访问器属性）。</li>
+<li><code>[[Emumerable]]</code> ：表示能否通过 <code>for...in</code> 返回该属性。</li>
+<li><code>[[Writable]]</code> ：表示能否修改属性的值。</li>
+<li><code>Value</code> ：表示这个属性的值。读取属性值时，从这个位置读，写入属性值时从这个位置把新值保存在这个位置。</li>
+</ul>
+<p><strong>当我们不显式的修改这些特性定义对象的属性时，除 <code>[[Value]]</code> 外，其它特性都为 <code>true</code>。</strong></p>
+<p>要修改属性的默认特性，需要使用 <code>Object.defineProperty()</code> 方法。</p>
+<p>语法是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(obj, propertyName, descriptor)</span><br></pre></td></tr></table></figure>
+
+<p><code>obj</code>，<code>propertyName</code>：要处理的对象和属性。</p>
+<p><code>descriptor</code>：描述符对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&#x27;name&#x27;</span>, &#123;</span><br><span class="line">	value: <span class="string">&#x27;zhima&#x27;</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>以上我们在对象 <code>user</code> 中创建一个 <code>name</code> 属性，需要注意第二个参数 <code>&#39;name&#39;</code> 是字符串（对象的属性名其实是字符串）。<strong>在显式的使用该方法创建新属性时，如果不指定 <code>[[Configurable]]</code> <code>[[Emumerable]]</code> <code>[[Writable]]</code> 都将是 <code>false</code>。</strong></p>
+<p>现在让我们通过示例来看看标志的效果。</p>
+<h3 id="只读"><a href="#只读" class="headerlink" title="只读"></a>只读</h3><p>我们通过修改 <code>writable</code> 标志来把 <code>user.name</code> 设置为只读：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  name: <span class="string">&quot;zhima&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&quot;name&quot;</span>, &#123;</span><br><span class="line">  writable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">user.name = <span class="string">&quot;Pete&quot;</span>;	<span class="comment">// 错误，user 的name 值不会改变。</span></span><br></pre></td></tr></table></figure>
+
+<p>现在没有人可以改变我们的用户名称，除非他重新调用 <code>defineProperty</code> 来覆盖我们的用户。</p>
+<h3 id="不可枚举"><a href="#不可枚举" class="headerlink" title="不可枚举"></a>不可枚举</h3><p>我们可以设置 <code>enumerable:false</code>。然后它不会出现在 <code>for..in</code> 循环中:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  name: <span class="string">&quot;zhima&quot;</span>,</span><br><span class="line">  sayHi() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;hi&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&quot;sayHi&quot;</span>, &#123;</span><br><span class="line">  enumerable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> user) alert(key); <span class="comment">// name</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="不可配置"><a href="#不可配置" class="headerlink" title="不可配置"></a>不可配置</h3><p>我们可以设置 <code>Configurable: false</code>，一个不可配置的属性不能被 <code>defineProperty</code> 删除或修改。</p>
+<p><strong>注意：当 <code>Configurable: false</code> 时，<code>[[Writable]]</code> 特性可以单向从 <code>true</code> 修改为 <code>false</code> ，而 <code>[[Value]]</code> 特性只与  <code>[[Writable]]</code> 特性关联不受 <code>[[Configurable]]</code> 影响。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">    name: <span class="string">&#x27;zhima&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&quot;name&quot;</span>, &#123;</span><br><span class="line">  configurable: <span class="literal">false</span>	<span class="comment">// 因为 [[Writable]] 为 true，所以可以通过修改 [[Value]] 来修改属性的值</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">    name: <span class="string">&#x27;zhima&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(user, <span class="string">&quot;name&quot;</span>, &#123;</span><br><span class="line">  writable: <span class="literal">false</span>,	</span><br><span class="line">  configurable: <span class="literal">false</span>	<span class="comment">// 在这里，我们将 user.name 设置为“永久封闭”的常量：</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h2><p>访问器属有 4 个描述行为的特性。</p>
+<ul>
+<li><code>[[Configurable]]</code>：同数据属性相似。</li>
+<li><code>[[Emumerable]]</code>：同数据属性相似。</li>
+<li><code>[[Get]]</code>：在读取属性时调用的函数。</li>
+<li><code>[[Set]]</code>：在写入属性时调用的函数。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = &#123;</span><br><span class="line">  firstName: <span class="string">&quot;zhima&quot;</span>,</span><br><span class="line">  lastName: <span class="string">&quot;xiaoguan&quot;</span>,</span><br><span class="line"></span><br><span class="line">  <span class="keyword">get</span> <span class="title">fullName</span>() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.firstName&#125;</span> <span class="subst">$&#123;<span class="built_in">this</span>.lastName&#125;</span>`</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="keyword">set</span> <span class="title">fullName</span>(<span class="params">value</span>) &#123;</span><br><span class="line">  	[<span class="built_in">this</span>.firstName, <span class="built_in">this</span>.lastName] = value.split(<span class="string">&quot; &quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">alert(user.fullName); <span class="comment">// zhima xiaoguan</span></span><br><span class="line">user.fullName = <span class="string">&#x27;zhima daguan&#x27;</span>;</span><br><span class="line">user.firstName = <span class="string">&#x27;zhima&#x27;</span>;</span><br><span class="line">user.lastName = <span class="string">&#x27;daguan&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>Vue 中的计算属性就是访问器属性。</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/01/26/JS 是万物皆对象吗？/"><span>JS 是万物皆对象吗？</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/26/JS 是万物皆对象吗？/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-26T08:30:30.000Z">
+          2020-01-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <a id="more"></a>
+
+<p>常常听到别人说 JS 中万物皆对象，但是事实确实是这样的吗？在高程中我找到了答案。</p>
+<p>首先 JS 中有两大类数据类型，<em>基本数据类型</em>和<em>引用数据类型</em>，引用数据类型是对象这个不用解释，那基本数据类型的本质也是继承自 <code>Object</code> 嘛？答案是否定的。</p>
+<p>首先，基本数据类型是无法添加属性和方法的，而引用类型却可以。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">10</span>;</span><br><span class="line">num.name = <span class="string">&#x27;zhima&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num.name);	<span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">obj.name = <span class="string">&#x27;zhima&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.name);	<span class="comment">// &#x27;zhima&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>在内存中，基本类型和引用类型的储存方式也是不同的。基本类型的数据直接放在栈内存中，而引用数据类型在栈内存只保存它的引用（指针），真正的值存在堆内存中。这也是这两种数据类型访问方式不同的原因。</p>
+<p>所以 JS 万物皆对象的说法是不正确的，但是又为什么常有人造成这样的误解呢？</p>
+<p>因为 JS 中基本数据类型（<code>String</code> <code>Boolean</code> <code>Number</code>）也有属于它们的属性和方法，而属性和方法是对象才有的。</p>
+<p>最简单的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s1 = <span class="string">&#x27;zhima&#x27;</span>;</span><br><span class="line"><span class="keyword">let</span> s2 = s1.substring(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p>这个例子中，我使用了字符串 <code>s1</code> 的方法，这和基本类型不是对象的说法矛盾了，这就要提到 JS 中的基本包装类型了。</p>
+<p>每当我们去调用基本数据类型的属性方法时，JS 都会在后台创建一个对应基本包装类型的对象，从而让我们可以调用一些方法来操作数据。</p>
+<p>还是之前的例子，当我们调用 <code>s1</code> 的方法时，JS 在后台完成了一系列的动作：</p>
+<ol>
+<li>创建 <code>String</code> 类型的一个实例；</li>
+<li>在实例上调用指定的方法；</li>
+<li>销毁这个实例。</li>
+</ol>
+<p>可以想象为以下三行代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s1 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&#x27;zhima&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> s2 = s1.substring(<span class="number">2</span>);</span><br><span class="line">s1 = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+
+<p>所以引用类型和基本包装类型的区别就在于对象的生命周期，基本包装类型的生命周期很短，只在代码执行的孙坚存在，然后就被销毁了，所以这也是为什么我们不能为基本类型添加属性和方法。</p>
+<p>所以这也是以下例子的原因：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">&quot;zhima&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&quot;xiaoguan&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str1.__proto__ === str2.__proto__);	<span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(str1 <span class="keyword">instanceof</span> <span class="built_in">String</span>);	<span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(str2 <span class="keyword">instanceof</span> <span class="built_in">String</span>);	<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>现在可以说明 JS 并不是万物皆对象了！</strong></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/01/25/JS 传递参数，是按值传递还是引用传递？/"><span>JS 传递参数，是按值传递还是引用传递？</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/01/25/JS 传递参数，是按值传递还是引用传递？/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-01-25T11:26:10.000Z">
+          2020-01-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <a id="more"></a>
+
+<p><strong>首先明确答案，JavaScript 中所有函数的参数都是按值传递的！</strong></p>
+<p>怎么和想的不太一样，这篇文章来详细解释一下函数参数的传递方式！</p>
+<p>传递基本类型的数据比较好理解，被传递的值直接复制给命名参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    num += <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> count = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> result = add(count);</span><br><span class="line">alert(count);	<span class="comment">//20</span></span><br><span class="line">alert(result);	<span class="comment">//30</span></span><br></pre></td></tr></table></figure>
+
+<p>调用函数时，<code>count</code> 将值复制给函数中的参数 <code>num</code>。在函数中 <code>num</code> 被加上了 10，但是并不会影响 <code>count</code> 的值，它们存着数值相同但相互独立的值。如果 <code>num</code> 是按引用传递的话，<code>count</code> 的值将变为30，反映函数内部的变化。</p>
+<p>当传递的参数是引用类型的数据时，函数参数仍然是按值传递。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">	obj.name = <span class="string">&#x27;zhima&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = &#123;&#125;;</span><br><span class="line">setName(person);</span><br><span class="line">alert(person.name);	<span class="comment">//&#x27;zhima&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>首相我们创建了一个名为 <code>person</code> 的空对象，也就是说：<code>person</code> 的<strong>值</strong>存着空对象的<strong>引用</strong>。当调用函数时，<code>person</code> 将它存的值（也就是空对象的引用）复制给 <code>obj</code> 。所以 <code>person</code> 和 <code>obj</code> 引用是同一个变量，函数内部的修改，会反映到函数外来。</p>
+<blockquote>
+<p>这里要注意区分访问变量的方式和传递参数的方式不是一回事。<code>person</code> 是按值传递给 <code>obj</code> 的，但是 <code>person</code> 和 <code>obj</code> 都是按引用来访问同一个对象的，因为 <code>person</code> 中的值就是对象的引用。</p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/JavaScript/">JavaScript</a>
+    </span>
     
 
     </div>
